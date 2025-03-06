@@ -70,10 +70,10 @@ def _add_factorial_tokens(name: str, result: List[TOKEN]) -> List[TOKEN]:
         toknum, tokval = token
         i = length - index - 1
 
-        if tokval == '(':
-            diff -= 1
-        elif tokval == ')':
+        if tokval == ')':
             diff += 1
+        elif tokval == '(':
+            diff -= 1 
 
         if diff == 0:
             if i - 1 >= 0 and result[i - 1][0] == NAME:
